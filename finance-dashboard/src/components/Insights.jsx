@@ -26,7 +26,7 @@ export default function Insights() {
     (a, b) => b[1] - a[1]
   )[0];
 
-  //  Monthly comparison (simple)
+  //  Monthly comparison
   const totalExpense = expenses.reduce((a, b) => a + b.amount, 0);
   const totalIncome = transactions
     .filter((t) => t.type === "income")

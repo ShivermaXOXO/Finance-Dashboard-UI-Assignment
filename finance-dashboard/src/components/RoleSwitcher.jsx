@@ -8,7 +8,7 @@ export default function RoleSwitcher() {
     <select
       value={role}
       onChange={(e) => setRole(e.target.value)}
-      className="border p-2"
+      className="border p-2 text-gray-500"
     >
       <option value="viewer">Viewer</option>
       <option value="admin">Admin</option>

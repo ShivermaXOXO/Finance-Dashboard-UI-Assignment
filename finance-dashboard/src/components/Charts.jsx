@@ -40,15 +40,10 @@ export default function Charts() {
       <div className="w-full h-[250px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={transactions}>
-            <XAxis dataKey="date" tick={{ fontSize: 10 }} />
+            <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
-            <Line
-              type="monotone"
-              dataKey="amount"
-              stroke="#3b82f6"
-              strokeWidth={2}
-            />
+            <Line dataKey="amount" stroke="#3b82f6" />
           </LineChart>
         </ResponsiveContainer>
       </div>

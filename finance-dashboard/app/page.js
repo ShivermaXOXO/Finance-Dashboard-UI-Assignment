@@ -11,19 +11,28 @@ export default function Home() {
   const role = useFinanceStore((state) => state.role);
 
   return (
-    <div className="p-6 space-y-6">
-      <div className="flex justify-between">
+    <div className="p-4 md:p-6 space-y-6 max-w-7xl mx-auto w-full">
+
+      {/* Header Section */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <h1 className="text-2xl font-bold">Finance Dashboard</h1>
         <RoleSwitcher />
       </div>
-
       <SummaryCards />
-      <Charts />
-      <Insights />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 w-full overflow-hidden">
+          <Charts />
+        </div>
+        <div className="space-y-6 w-full">
+          <Insights />
+          {role === "admin" && <AddTransaction />}
+        </div>
+      </div>
 
-      {role === "admin" && <AddTransaction />}
+      <div className="w-full pt-2">
+        <TransactionsTable />
+      </div>
 
-      <TransactionsTable />
     </div>
   );
 }
