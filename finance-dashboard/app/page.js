@@ -4,6 +4,7 @@ import Charts from "../src/components/Charts";
 import TransactionsTable from "../src/components/TransactionsTable";
 import RoleSwitcher from "../src/components/RoleSwitcher";
 import AddTransaction from "../src/components/AddTransaction";
+import Insights from "../src/components/Insights";
 import { useFinanceStore } from "../src/store/useFinanceStore";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
 
       <SummaryCards />
       <Charts />
+      <Insights />
 
       {role === "admin" && <AddTransaction />}
 
